@@ -1,0 +1,70 @@
+h2,
+h3 {
+  color: #333;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+section {
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #0056b3;
+}
+
+p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+strong {
+  color: #333;
+}
+
+/* Styling for headings and sections */
+h3 {
+  font-size: 1.8em;
+  color: #0077cc;
+  margin-top: 30px;
+}
+
+/* Add a little spacing and make the page more readable */
+section h3 + p {
+  margin-top: 10px;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  section {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+}

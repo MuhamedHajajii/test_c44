@@ -1,0 +1,74 @@
+<div class="mt-5 d-flex gap-3">
+  <button
+    (click)="toggleView = false"
+    [disabled]="!toggleView"
+    class="btn btn-primary"
+  >
+    <i class="fa-solid fa-border-all fs-4"></i>
+  </button>
+  <button
+    (click)="toggleView = true"
+    [disabled]="toggleView"
+    class="btn btn-primary"
+  >
+    <i class="fa-solid fa-bars fs-4"></i>
+  </button>
+</div>
+<div class="row my-5 g-4" [class]="{ 'row-cols-4': !toggleView }">
+  @for (recipe of recipes; track $index) {
+  <div>
+    <div
+      class="card h-100"
+      [class]="{ 'flex-row': toggleView }"
+      (click)="toggleCurrentRecipe(recipe); toggleLightBox()"
+    >
+      <figure class="position-relative">
+        <img
+          (load)="isImageLoaded($event)"
+          style="height: 250px; object-fit: cover; object-position: top"
+          class="w-100"
+          [src]="recipe.image_url"
+          [alt]="recipe.title"
+        />
+        <span
+          class="placeholder position-absolute top-0 start-0 bottom-0 end-0"
+        ></span>
+      </figure>
+      <div class="card-body">
+        <h3>{{ recipe.title }}</h3>
+        <p>{{ recipe.publisher }}</p>
+      </div>
+    </div>
+  </div>
+  }
+</div>
+
+@if (isLightBox) {
+<div
+  (click)="toggleLightBox()"
+  class="lightBoxContainer position-absolute top-0 start-0 bottom-0 end-0 bg-black bg-opacity-75 d-flex justify-content-center align-items-center"
+>
+  <div class="lightBoxContent">
+    <div>
+      <div class="card h-100" (click)="stopProp($event)">
+        <figure class="position-relative">
+          <img
+            (load)="isImageLoaded($event)"
+            style="height: 250px; object-fit: cover; object-position: top"
+            class="w-100"
+            [src]="currentRecipe.image_url"
+            [alt]="currentRecipe.title"
+          />
+          <span
+            class="placeholder position-absolute top-0 start-0 bottom-0 end-0"
+          ></span>
+        </figure>
+        <div class="card-body">
+          <h3>{{ currentRecipe.title }}</h3>
+          <p>{{ currentRecipe.publisher }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+}

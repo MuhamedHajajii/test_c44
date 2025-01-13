@@ -1,0 +1,57 @@
+<section>
+  <div class="col-md-7 shadow p-4 mx-auto rounded-3">
+    <div>
+      <header>
+        <h2 class="text-center">Context Us</h2>
+      </header>
+      <form class="row g-3">
+        <div>
+          <label class="form-label" for="userNAme">userNAme</label>
+          <input
+            class="form-control"
+            type="text"
+            name="userNAme"
+            placeholder="userNAme"
+            autocomplete="name"
+            id="userNAme"
+          />
+        </div>
+        <div>
+          <label class="form-label" for="userEmail">userEmail</label>
+          <input
+            class="form-control"
+            type="email"
+            name="userEmail"
+            placeholder="userEmail"
+            autocomplete="email"
+            id="userEmail"
+          />
+        </div>
+        <div>
+          <label class="form-label" for="userSubject">userSubject</label>
+          <input
+            class="form-control"
+            type="text"
+            name="userSubject"
+            placeholder="userSubject"
+            autocomplete="off"
+            id="userSubject"
+          />
+        </div>
+        <div>
+          <label for="userMessage" class="form-label">userMessage</label>
+          <textarea
+            [rows]="10"
+            class="form-control"
+            name="userMessage"
+            id="userMessage"
+            placeholder="Write Your Message..."
+          ></textarea>
+        </div>
+        <div>
+          <button class="btn btn-primary">Send Message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
